@@ -14,6 +14,10 @@ or alternatively just copy-paste the function directly into your `~/.bashrc` fil
 
 ```bash
 mcd () {
+    if [ $# = 0 ]; then
+        echo "Usage: mcd <directory>"
+        return
+    fi
     mkdir -p "$1" && cd "$1"
 }
 ```
